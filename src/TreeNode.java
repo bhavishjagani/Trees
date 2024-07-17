@@ -44,7 +44,46 @@ public class TreeNode {
             }
         }
     }
+    public int max() {
+        if (right == null) {
+            return value;
+        }
+        return right.max();
+    }
+    public int min() {
+        if (left == null) {
+            return value;
+        }
+        return left.min();
+    }
+    public void traverseInOrder() {
+        if (left != null) {
+            left.traverseInOrder();
+        }
+        System.out.print(value + ", ");
+        if (right != null) {
+            right.traverseInOrder();
+        }
+    }
+    public void traversePreOrder() {
+        System.out.print(value + ", ");
+        if (left != null) {
+            left.traversePreOrder();
+        }
+        if (right != null) {
+            right.traversePreOrder();
+        }
+    }
+    public void traversePostOrder() {
+        if (left != null) {
+            left.traversePostOrder();
+        }
+        if (right != null) {
+            right.traversePostOrder();
+        }
+        System.out.print(value + ", ");
+    }
+
 }
 
-//Write a method to display/print tree, implement post order, pre order, in order traversal
-//Add on github, send link
+//Write a method to search, then delete

@@ -21,4 +21,34 @@ public class Tree {
     public String toString() {
         return output.toString();
     }
+    public int getMaxValue() {
+        if (root == null) {
+            return -1;
+        }
+        return root.max();
+    }
+    public int getMinValue() {
+        if (root == null) {
+            return -1;
+        }
+        return root.min();
+    }
+    public void traverseInOrder() {
+        if (root == null) {
+            return;
+        }
+        root.traverseInOrder();
+    }
+    public void traversePreOrder() {
+        if (root == null) {
+            return;
+        }
+        root.traversePreOrder();
+    }
+    public void traversePostOrder() {
+        if (root == null) {
+            return;
+        }
+        root.traversePostOrder();
+    }
 }

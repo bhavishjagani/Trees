@@ -5,6 +5,7 @@ public class Tree {
     private List<Integer> output;
     public Tree() {
         output = new ArrayList<>();
+        this.root = null;
     }
     public void insert(int value) {
         if (root == null) {
@@ -50,5 +51,38 @@ public class Tree {
             return;
         }
         root.traversePostOrder();
+    }
+    public TreeNode search(int value) {
+        TreeNode current = root;
+        while (current != null) {
+            if (value == current.getValue()) {
+                return current;
+            }
+            else if (value < current.getValue()) {
+                current = current.getLeft();
+            }
+            else if (value > current.getValue())  {
+                current = current.getRight();
+            }
+        }
+        return null;
+    }
+    public void delete(int value) {
+        System.out.println(output);
+        root = _delete(root, value);
+        output.remove(root.getValue());
+    }
+    public TreeNode _delete(TreeNode node, int value) {
+        if (node == null) {
+            return null;
+        }
+        if (value < node.getValue()) {
+            node.setLeft(_delete(node.getLeft(), value));
+        }
+        else if (value > node.getValue()) {
+            node.setRight(_delete(node.getRight(), value));
+        }
+        System.out.println(node);
+        return node;
     }
 }

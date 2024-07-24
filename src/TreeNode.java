@@ -83,7 +83,10 @@ public class TreeNode {
         }
         System.out.print(value + ", ");
     }
-
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }
 
-//Write a method to search, then delete
+//Write a method to search

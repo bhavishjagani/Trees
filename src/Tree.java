@@ -10,14 +10,10 @@ public class Tree {
     public void insert(int value) {
         if (root == null) {
             root = new TreeNode(value);
-        }
-        else {
+        } else {
             root.insert(value);
-            output.add(value);
         }
-    }
-    public TreeNode getRoot() {
-        return root;
+        output.add(value);
     }
     public String toString() {
         return output.toString();
@@ -57,32 +53,44 @@ public class Tree {
         while (current != null) {
             if (value == current.getValue()) {
                 return current;
-            }
-            else if (value < current.getValue()) {
+            } else if (value < current.getValue()) {
                 current = current.getLeft();
-            }
-            else if (value > current.getValue())  {
+            } else {
                 current = current.getRight();
             }
         }
         return null;
     }
     public void delete(int value) {
-        System.out.println(output);
         root = _delete(root, value);
-        output.remove(root.getValue());
+        output.remove(Integer.valueOf(value));
     }
-    public TreeNode _delete(TreeNode node, int value) {
+    private TreeNode _delete(TreeNode node, int value) {
         if (node == null) {
             return null;
         }
+
         if (value < node.getValue()) {
             node.setLeft(_delete(node.getLeft(), value));
         }
         else if (value > node.getValue()) {
             node.setRight(_delete(node.getRight(), value));
         }
-        System.out.println(node);
+        else {
+            // Node with only one child or no child
+            if (node.getLeft() == null) {
+                return node.getRight();
+            }
+            else if (node.getRight() == null) {
+                return node.getLeft();
+            }
+
+            // Node with two children: Get the inorder successor (smallest in the right subtree)
+            node.setValue(node.getRight().min());
+
+            // Delete the smallest node in the right subtree
+            node.setRight(_delete(node.getRight(), node.getValue()));
+        }
         return node;
     }
 }

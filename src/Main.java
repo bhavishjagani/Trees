@@ -11,8 +11,9 @@ public class Main {
         tree.insert(15);
         System.out.println(tree);
 
-        tree.delete(7);
+        tree.delete(10);
         System.out.println(tree);
+        tree.traverseInOrder();
 
 //        System.out.println();
 //        System.out.println(tree.getMaxValue());

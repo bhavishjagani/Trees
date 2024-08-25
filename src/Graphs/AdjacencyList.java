@@ -15,8 +15,11 @@ public class AdjacencyList {
         lists.get(source).add(destination);
     }
     public void removeEdge(int source, int destination) {
+        if (! (lists.get(source).contains(Integer.valueOf(destination)))) {
+            throw new IllegalArgumentException("Destination Entered Is Not A Part of the Source.");
+        }
         validateVertices(source, destination);
-        lists.get(source).remove(destination);
+        lists.get(source).remove(Integer.valueOf(destination));
     }
     public void printGraph() {
         for (int i = 0; i < vertices; i++) {

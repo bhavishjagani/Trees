@@ -28,14 +28,22 @@ public class GraphMain {
         adjacencyMatrix.addEdge(4, 3);
         adjacencyMatrix.addEdge(3, 4);
         adjacencyMatrix.addEdge(3, 3);
-        adjacencyMatrix.printGraph();
+        //adjacencyMatrix.printGraph();
         //System.out.println();
         //System.out.println(Arrays.toString(adjacencyMatrix.getNeighbors(0)));
         adjacencyMatrix.removeEdge(3,3);
         adjacencyMatrix.removeEdge(0,1);
-        System.out.println();
-        adjacencyMatrix.printGraph();
+        //System.out.println();
+        //adjacencyMatrix.printGraph();
+
+        AdjacencyListArray adjacencyListArray = new AdjacencyListArray(4);
+        adjacencyListArray.addEdge(0, 1);
+        adjacencyListArray.addEdge(0, 2);
+        adjacencyListArray.addEdge(1, 2);
+        adjacencyListArray.addEdge(2, 3);
+        //adjacencyListArray.printGraph();
+
+        EdgeList edgeList = new EdgeList();
     }
 }
 //Homework: Do Adjacency List with 2D Array
-//Homework: Do Adjacency List + weight

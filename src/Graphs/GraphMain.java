@@ -44,6 +44,8 @@ public class GraphMain {
         //adjacencyListArray.printGraph();
 
         EdgeList edgeList = new EdgeList();
+
     }
 }
-//Homework: Do Adjacency List with 2D Array
+//Implement DFS (Depth First Search)
+//Find Two Problems, Leetcode, BFS

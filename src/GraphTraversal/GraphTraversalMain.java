@@ -12,7 +12,9 @@ public class GraphTraversalMain {
 
         bfs.bFSTraversal(3);
 
-        System.out.println(bfs);
+        //System.out.println(bfs);
+
+        DFS dfs = new DFS(7);
     }
 }
 //Implement DFS (Depth First Search)

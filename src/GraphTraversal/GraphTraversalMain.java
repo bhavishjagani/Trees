@@ -17,5 +17,3 @@ public class GraphTraversalMain {
         DFS dfs = new DFS(7);
     }
 }
-//Implement DFS (Depth First Search)
-//Find Two Problems, Leetcode, BFS

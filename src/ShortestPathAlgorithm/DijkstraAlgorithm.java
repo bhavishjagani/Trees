@@ -1,18 +1,20 @@
 package ShortestPathAlgorithm;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 public class DijkstraAlgorithm {
     public int[] dijkstra(int[][] graph, int source) {
         int n = graph.length;
         int[] dist = new int[n];
-        boolean[] visited = new boolean[n];
+        boolean[]
+                visited = new boolean[n];
 
         Arrays.fill(dist, Integer.MAX_VALUE);
         if (n > 0) {
             dist[source] = 0;
         }
 
-        PriorityQueue <int[]> pQ = new PriorityQueue<>();
+        PriorityQueue <int[]> pQ = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
         pQ.offer(new int[] {source, 0});
 
         while (!pQ.isEmpty()) {

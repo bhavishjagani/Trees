@@ -6,8 +6,7 @@ public class DijkstraAlgorithm {
     public int[] dijkstra(int[][] graph, int source) {
         int n = graph.length;
         int[] dist = new int[n];
-        boolean[]
-                visited = new boolean[n];
+        boolean[] visited = new boolean[n];
 
         Arrays.fill(dist, Integer.MAX_VALUE);
         if (n > 0) {
